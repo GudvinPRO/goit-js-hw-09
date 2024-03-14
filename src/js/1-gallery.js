@@ -91,13 +91,7 @@ function createImg(arr) {
 }
 
 
-container.addEventListener('click', function(event) {
-
-    event.preventDefault();
-
-    if (event.target.tagName === 'IMG') {
-        const ImageSource = event.target.dataset.source;
-        const lightbox = basicLightbox.create(`<img src="${ImageSource}">`);
-        lightbox.show();
-    }
+const lightBox = new SimpleLightbox(".gallery a", {
+    captionsData: 'alt',
+    captionDelay: 250,
 });
