@@ -1,11 +1,11 @@
 const formSet = document.querySelector('.feedback-form');
 const inputInfo = formSet.elements.email;
-const areaInfo = formSet.elements.message;
+const textInfo = formSet.elements.message;
 
 const loadFormState = () => {
-  const parsedInfo = JSON.parse(localStorage.getItem('feedback-form-state'));
+  const parsedInfo = JSON.parse(localStorage.getItem('feedback-info'));
   if (parsedInfo !== null) {
-    areaInfo.value = parsedInfo.message;
+    textInfo.value = parsedInfo.message;
     inputInfo.value = parsedInfo.email;
     return parsedInfo;
   }
@@ -14,21 +14,21 @@ const loadFormState = () => {
 
 const saveFormState = () => {
   const email = inputInfo.value.trim();
-  const message = areaInfo.value.trim();
+  const message = textInfo.value.trim();
   const saveInfo = { email, message };
-  localStorage.setItem('feedback-form-state', JSON.stringify(saveInfo));
+  localStorage.setItem('feedback-info', JSON.stringify(saveInfo));
   return saveInfo;
 };
 
 const clearFormState = () => {
-  localStorage.removeItem('feedback-form-state');
+  localStorage.removeItem('feedback-info');
   formSet.reset();
 };
 
 const handleSubmit = evt => {
   evt.preventDefault();
   const emailValue = inputInfo.value.trim();
-  const messageValue = areaInfo.value.trim();
+  const messageValue = textInfo.value.trim();
   if (emailValue.length === 0 || messageValue.length === 0) {
     console.log(`Please fill in all fields.`);
   } else {
@@ -41,5 +41,5 @@ const handleSubmit = evt => {
 formSet.addEventListener('input', saveFormState);
 formSet.addEventListener('submit', handleSubmit);
 
-// Load form state when the page loads
+
 const initialFormState = loadFormState();
