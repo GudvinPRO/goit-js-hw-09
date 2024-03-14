@@ -117,5 +117,47 @@ img {
   object-position: center;
 }
 
+/*--------------------------------------------------------form---------------------------------------*/
+
+form {
+  display: block;
+  border-radius: 8px;
+  padding: 24px;
+  width: 408px;
+  background-color: #fafafa;
+
+}
+
+input {
+  display: block;
+  Width: 360px;
+  height: 40px;
+  border-color: #808080;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+textarea {
+  display: block;
+  Width: 360px;
+  border-color: #808080;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 95px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
 
 

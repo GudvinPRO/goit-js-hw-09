@@ -8,9 +8,19 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section>
-      <a href="./index.html">Go to home</a>
-      <h1>Welcome to page 3</h1>
-    </section>
+    <p><a class="golink" href="index.html">Go back</a></p>
+
+    <form class="feedback-form" autocomplete="off">
+      <label>
+          Email
+          <input type="email" name="email" autofocus />
+      </label>
+      <label>
+          Message
+          <textarea name="message" rows="8"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+  </form>
+
   </body>
 </html>
